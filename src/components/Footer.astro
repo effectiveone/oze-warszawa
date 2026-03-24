@@ -1,0 +1,39 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3>OZE Warszawa</h3>
+        <p>Lokalny portal o odnawialnych źródłach energii w Warszawie i na Mazowszu.</p>
+      </div>
+      <div>
+        <h4>Szybkie linki</h4>
+        <ul>
+          <li><a href="/">Strona główna</a></li>
+          <li><a href="/blog">Wszystkie artykuły</a></li>
+          <li><a href="https://ecoaudyt.app" target="_blank">ecoaudyt.app</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© {year} OZE Warszawa. Wszelkie prawa zastrzeżone.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+.site-footer { background: #060d1a; border-top: 1px solid var(--border); padding: 3rem 0 1.5rem; margin-top: 4rem; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+.footer-grid h3 { font-family: 'Playfair Display', serif; color: var(--gold); margin-bottom: 0.75rem; }
+.footer-grid h4 { color: var(--gold-light); margin-bottom: 0.5rem; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; }
+.footer-grid p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+.footer-grid ul { list-style: none; }
+.footer-grid li { margin-bottom: 0.4rem; }
+.footer-grid a { color: var(--text-muted); font-size: 0.9rem; }
+.footer-grid a:hover { color: var(--gold); }
+.footer-bottom { border-top: 1px solid var(--border); padding-top: 1.5rem; text-align: center; }
+.footer-bottom p { color: var(--text-muted); font-size: 0.8rem; }
+@media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; } }
+</style>

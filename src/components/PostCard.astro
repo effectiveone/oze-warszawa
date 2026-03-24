@@ -1,0 +1,35 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  pubDate: Date;
+  tags?: string[];
+}
+
+const { title, description, slug, pubDate, tags } = Astro.props;
+const dateStr = new Date(pubDate).toLocaleDateString('pl-PL', { year: 'numeric', month: 'short', day: 'numeric' });
+---
+
+<article class="post-card">
+  {tags && tags[0] && <span class="card-category">{tags[0]}</span>}
+  <h2><a href={`/blog/${slug}`}>{title}</a></h2>
+  <p class="card-desc">{description}</p>
+  <footer class="card-footer">
+    <time>{dateStr}</time>
+    <a href={`/blog/${slug}`} class="read-more">Czytaj więcej →</a>
+  </footer>
+</article>
+
+<style>
+.post-card { background: var(--navy-light); border: 1px solid var(--border); border-top: 3px solid var(--gold); padding: 1.5rem; transition: transform 0.2s, border-color 0.2s; }
+.post-card:hover { transform: translateY(-3px); border-color: var(--gold); }
+.card-category { display: inline-block; background: var(--gold); color: var(--navy); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.5rem; margin-bottom: 0.75rem; }
+.post-card h2 { font-size: 1.2rem; margin-bottom: 0.75rem; }
+.post-card h2 a { color: var(--text); }
+.post-card h2 a:hover { color: var(--gold); text-decoration: none; }
+.card-desc { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; }
+.card-footer { display: flex; justify-content: space-between; align-items: center; }
+.card-footer time { color: var(--text-muted); font-size: 0.8rem; }
+.read-more { color: var(--gold); font-size: 0.85rem; font-weight: 600; }
+</style>
