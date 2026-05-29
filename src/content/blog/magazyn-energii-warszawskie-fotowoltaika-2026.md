@@ -1,4 +1,5 @@
 ---
+title: "Magazyn energii w Warszawie – czy warto inwestować?"
 pubDate: 2026-05-02
 description: "Magazyny energii warszawskie – ceny, parametry, dofinansowanie i instalatorzy. Czy opłaca się inwestować w baterię do PV?"
 slug: "magazyn-energii-warszawskie-fotowoltaika-2026"
